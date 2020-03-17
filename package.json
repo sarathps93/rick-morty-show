@@ -1,0 +1,46 @@
+{
+  "name": "rick-morty-show",
+  "version": "1.0.0",
+  "description": "Catalogue of all characters of rick and morty show",
+  "main": "index.js",
+  "scripts": {
+    "build:server": "webpack --config webpack.server.js",
+    "build:client": "webpack --config webpack.client.js",
+    "lint": "eslint ."
+  },
+  "author": "Sarath P S",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "prop-types": "^15.7.2",
+    "redux-thunk": "^2.3.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
