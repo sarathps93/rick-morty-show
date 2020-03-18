@@ -4,7 +4,7 @@ import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import htmlTemplate from '../templates/htmlTemplate';
-import Routes from '../routes';
+import Routes from '../client/routes';
 
 export default (req, store = {}) => {
   const content = renderToString(
