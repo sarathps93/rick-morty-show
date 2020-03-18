@@ -5,3 +5,5 @@ export const isPageVisible = (page = 1, activePage = 1) => {
   if (differenceFactor > 3 && page !== 1) return false;
   return true;
 };
+
+export const getDateDifferenceFromToday = (givenDate) => new Date().getFullYear() - new Date(givenDate).getFullYear();

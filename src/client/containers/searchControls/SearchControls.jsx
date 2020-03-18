@@ -13,6 +13,32 @@ class SearchControls extends React.PureComponent {
     };
   }
 
+  handleNextPageRoute(e) {
+    const { info } = this.props;
+    const { currentPage } = this.state;
+    const nextPage = currentPage + 1;
+    if (nextPage <= info.pages) {
+
+    } else {
+      e.preventDefault();
+    }
+  }
+
+  handlePreviousPageRoute(e) {
+    const { info } = this.props;
+    const { currentPage } = this.state;
+    const previousPage = currentPage - 1;
+    if (previousPage > 0) {
+
+    } else {
+      e.preventDefault();
+    }
+  }
+
+  handleRandomPageRoute() {
+
+  }
+
   render() {
     const { info } = this.props;
     const { currentPage } = this.state;
