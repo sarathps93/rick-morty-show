@@ -1,0 +1,32 @@
+.nav-searchbar {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    #searchbar {
+        background-color: #7b7b7b;
+        border: 0;
+        box-sizing: border-box;
+        padding: 6px 60px 6px 6px;
+        height: 48px;
+        font-size: 24px;
+        color: white;
+        width: 100%;
+        &::placeholder {
+            color: white;
+            opacity: 0.5;
+        }
+    }
+    button {
+        display: contents;
+    }
+    svg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-10px, 8px);
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+}

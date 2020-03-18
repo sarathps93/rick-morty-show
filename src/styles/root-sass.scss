@@ -1,3 +1,9 @@
+@import '../client/components/header/Header.scss';
+@import '../client/components/searchBar/SearchBar.scss';
+@import '../client/containers/searchControls/SearchControls.scss';
+
 body {
-    font: 100;
+  box-sizing: border-box;
+  background-color: #141414;
+  margin: 0;
 }

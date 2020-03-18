@@ -1,9 +1,13 @@
 import React from 'react';
 
-const App = () => {
-    return (
-        <div>Hello</div>
-    );
-};
+import Header from './components/header/Header';
+import SearchControls from './containers/searchControls/SearchControls';
+
+const App = () => (
+  <>
+    <Header />
+    <SearchControls />
+  </>
+);
 
 export default App;
