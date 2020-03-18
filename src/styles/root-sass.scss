@@ -1,9 +1,11 @@
 @import '../client/components/header/Header.scss';
 @import '../client/components/searchBar/SearchBar.scss';
 @import '../client/containers/searchControls/SearchControls.scss';
+@import '../client/components/pagination/Pagination.scss';
 
 body {
   box-sizing: border-box;
   background-color: #141414;
   margin: 0;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }

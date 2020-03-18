@@ -1,0 +1,11 @@
+.pagination--container {
+    margin: 18px;
+    color: white;
+    a {
+        color: white;
+        margin: 0 6px;
+    }
+    .activePage {
+        color: crimson;
+    }
+}
