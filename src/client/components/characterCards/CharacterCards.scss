@@ -7,6 +7,9 @@
         margin: auto;
         position: relative;
     }
+    hr:last-child {
+        display: none;
+    }
     .character-intro {
         color: white;
         text-align: left;
@@ -26,6 +29,7 @@
     .character-details {
         background-color: #525252;
         padding-top: 12px;
+        height: 201px;
         .details-grid-view {
             display: grid;
             grid-template-columns: 30% 70%;

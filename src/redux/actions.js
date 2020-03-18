@@ -1,15 +1,16 @@
 import axios from 'axios';
-import { baseAPI } from 'config';
 import { types } from './reducers';
 
-const fetchCharactersData = () => async (dispatch) => {
-  const results = await axios.get(baseAPI);
+export const baseAPI = 'https://rickandmortyapi.com/api/character/';
+
+const fetchCharactersData = (url, updateState) => async (dispatch) => {
+  const endpoint = !url ? baseAPI : url;
+  const results = await axios.get(endpoint);
   dispatch({
     type: types.fetch_character_data,
     payload: results.data,
   });
+  if (typeof updateState === 'function') updateState();
 };
 
-export default {
-  fetchCharactersData,
-};
+export default fetchCharactersData;

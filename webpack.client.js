@@ -48,6 +48,9 @@ module.exports = {
       filename: 'styles.css',
     }),
   ],
+  node: {
+    fs: 'empty',
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
   },

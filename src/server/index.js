@@ -3,7 +3,7 @@ import express from 'express';
 import logger from '../utils/logger';
 import renderer from './renderer';
 import createStore from '../redux/createStore';
-import actions from '../redux/actions';
+import fetchCharactersData from '../redux/actions';
 import env from '../../env';
 
 const PORT = process.env.PORT || 8081;
@@ -17,7 +17,7 @@ app.get('*', (req, res) => {
     res.redirect('/');
   }
   const store = createStore();
-  store.dispatch(actions.fetchCharactersData()).then(() => res.end(renderer(req, store)));
+  store.dispatch(fetchCharactersData()).then(() => res.end(renderer(req, store)));
 });
 
 app.listen(PORT, () => {
