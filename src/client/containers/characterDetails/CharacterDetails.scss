@@ -13,3 +13,11 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+.character-search-error {
+    text-align: center;
+    margin-top: 64px;
+    .error-text {
+        color: white;
+    }
+}

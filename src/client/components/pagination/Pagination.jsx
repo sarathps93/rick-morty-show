@@ -8,13 +8,17 @@ import { isPageVisible } from '../../../utils/functionalUtils';
 const pagesArray = [];
 
 const Pagination = (props) => {
-  const { currentPage, pageCount, onPageNav } = props;
+  const {
+    currentPage, pageCount, onPageNav, userSearchError,
+  } = props;
 
   if (!pagesArray.length) {
     for (let i = 0; i < pageCount; i += 1) {
       pagesArray.push(i + 1);
     }
   }
+
+  if (userSearchError) return null;
 
   return (
     <div className="pagination--container">
@@ -43,6 +47,7 @@ Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,
   pageCount: PropTypes.number.isRequired,
   onPageNav: PropTypes.func.isRequired,
+  userSearchError: PropTypes.bool.isRequired,
 };
 
 export default React.memo(Pagination);

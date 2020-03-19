@@ -13,6 +13,7 @@ class SearchControls extends React.PureComponent {
       currentPage: 1,
     };
     this.handlePageRoute = this.handlePageRoute.bind(this);
+    this.handleNameSearch = this.handleNameSearch.bind(this);
   }
 
   handlePageRoute(e) {
@@ -57,20 +58,35 @@ class SearchControls extends React.PureComponent {
     }
   }
 
+  handleNameSearch(e, string) {
+    e.preventDefault();
+    const { fetchPageData } = this.props;
+    const url = string && `${baseAPI}?name=${string}`;
+    const setCurrentPage = () => this.setState({
+      currentPage: 1,
+    });
+    fetchPageData(url, setCurrentPage);
+  }
+
   render() {
-    const { info } = this.props;
+    const { info, userSearchError } = this.props;
     const { currentPage } = this.state;
     const pageCount = info.pages;
     return (
       <div className="searchcontroller--container">
-        <SearchBar />
-        <Pagination currentPage={currentPage} pageCount={pageCount} onPageNav={this.handlePageRoute} />
+        <SearchBar handleNameSearch={this.handleNameSearch} />
+        <Pagination
+          currentPage={currentPage}
+          pageCount={pageCount}
+          onPageNav={this.handlePageRoute}
+          userSearchError={userSearchError}
+        />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => ({ info: state.info });
+const mapStateToProps = (state) => ({ info: state.info, userSearchError: state.userSearchError });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchPageData: (url, updateState) => dispatch(fetchCharactersData(url, updateState)),
@@ -83,6 +99,7 @@ SearchControls.propTypes = {
     prev: PropTypes.string,
   }),
   fetchPageData: PropTypes.func.isRequired,
+  userSearchError: PropTypes.bool.isRequired,
 };
 
 SearchControls.defaultProps = {
