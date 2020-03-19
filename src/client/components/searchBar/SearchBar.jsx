@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import SearchIcon from '../../assets/svgs/SearchIcon';
+import {
+  searchfilterOptions,
+} from '../../../../constants';
 
 const SearchBar = (props) => {
-  const { handleNameSearch } = props;
+  const { handleSearchFilterOptions } = props;
   const [inputValue, setInputValue] = useState('');
   return (
     <div className="searchcontroller--container">
-      <form onSubmit={(e) => handleNameSearch(e, inputValue)}>
+      <form onSubmit={(e) => handleSearchFilterOptions(e, searchfilterOptions.name, inputValue)}>
         <div className="nav-searchbar">
           <label htmlFor="searchbar">
             <input
@@ -29,7 +32,7 @@ const SearchBar = (props) => {
 };
 
 SearchBar.propTypes = {
-  handleNameSearch: PropTypes.func.isRequired,
+  handleSearchFilterOptions: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

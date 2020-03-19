@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { isPageVisible } from '../../../utils/functionalUtils';
+import { paginationButtons } from '../../../../constants';
 
 const pagesArray = [];
 
@@ -22,7 +23,7 @@ const Pagination = (props) => {
 
   return (
     <div className="pagination--container">
-      <a role="button" tabIndex="0" onClick={onPageNav}>{'< Prev'}</a>
+      <a role="button" tabIndex="0" onClick={onPageNav}>{paginationButtons.previous}</a>
       {
         pagesArray.map((page) => (isPageVisible(page, currentPage)
           ? (
@@ -38,7 +39,7 @@ const Pagination = (props) => {
           )
           : '.'))
       }
-      <a role="button" tabIndex="0" onClick={onPageNav}>{'Next >'}</a>
+      <a role="button" tabIndex="0" onClick={onPageNav}>{paginationButtons.next}</a>
     </div>
   );
 };
