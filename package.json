@@ -6,6 +6,8 @@
   "scripts": {
     "build:server": "webpack --config webpack.server.js",
     "build:client": "webpack --config webpack.client.js",
+    "build": "NODE_ENV=production npm run build:server && NODE_ENV=production npm run build:client",
+    "start": "NODE_ENV=production node ./build/server.js",
     "lint": "eslint .",
     "start:dev": "nodemon ./dist/server.js"
   },

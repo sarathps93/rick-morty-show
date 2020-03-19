@@ -8,7 +8,7 @@ import env from '../../env';
 
 const PORT = process.env.PORT || 8081;
 const app = express();
-const staticFolder = env === 'production' ? 'public' : 'dist';
+const staticFolder = env === 'production' ? 'build' : 'dist';
 
 app.use(express.static(staticFolder));
 
