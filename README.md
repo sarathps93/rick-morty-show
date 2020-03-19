@@ -30,3 +30,4 @@ In the interest of time, I have skipped few features which I will be implementin
 4. Creating docker image of the application
 5. Implementation of a loader
 6. Other performance and compatibility optimisations
+7. Implement a unit test framework using jest and react test library
