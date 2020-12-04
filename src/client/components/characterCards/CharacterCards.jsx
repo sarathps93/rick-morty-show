@@ -18,7 +18,9 @@ const CharacterCards = (props) => {
   return (
     <div className="character-cards">
       <div className="character-details-wrapper">
-        <img src={image} alt={name} />
+        <div style={{ width: '300px', height: '300px' }}>
+          <img src={image} alt={name} loading="lazy" />
+        </div>
         <div className="character-intro">
           <div className="characterName">{name}</div>
           <div className="characterId">{`id: ${id} - created ${createdDate} years ago`}</div>
